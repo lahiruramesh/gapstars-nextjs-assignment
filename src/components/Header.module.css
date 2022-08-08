@@ -1,0 +1,11 @@
+.nav {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 32px;
+    background: teal;
+}
+.navItem {
+    margin-right: 5%;
+}
