@@ -1,3 +1,6 @@
+/* 
+Header module css
+*/
 .nav {
     height: 100%;
     display: flex;
@@ -9,3 +12,9 @@
 .navItem {
     margin-right: 5%;
 }
+
+@media screen and (max-width: 820px) {
+    .nav {
+      display: grid;
+    }
+  }

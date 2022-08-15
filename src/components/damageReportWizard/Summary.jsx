@@ -1,5 +1,6 @@
 import React  from "react";
 
+// Summary section in Wizard
 export default function Summary() {
     return(
         <React.Fragment>

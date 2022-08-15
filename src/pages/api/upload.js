@@ -8,6 +8,7 @@ export const config = {
   },
 };
 
+// Image upload
 export default async function upload(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });

@@ -1,6 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
 
+// Retrieve all db files
+// TODO: pagination
 export default async function getReport(req, res) {
     
     if (req.method !== "GET") {

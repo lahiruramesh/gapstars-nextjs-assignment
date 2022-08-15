@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import {useRouter} from 'next/router';
 
+// Check damage report status by Reference
 export default function Status() {
 
     const router = useRouter();

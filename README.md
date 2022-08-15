@@ -1,8 +1,5 @@
-# Developer Feedbacks
-
-1. developed application screeenshots are avaiable in screenshots folder
-
-
+# Read more about setup
+GUIDE.md[GUIDE.md]
 
 # Next.js Assignment
 
@@ -65,6 +62,7 @@ Returns: UUID of the photo.
 Use this endpoint to store the Damage Report.
 
 Note: You can post whatever you want. It'll save everything as you'd like.
+
 
 ## Progress and sharing results
 

@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 
+// Customer details section in Wizard
 export default function CustomerDetails(props) {
 
   const onChangeHandler = (e) => {

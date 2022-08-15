@@ -12,6 +12,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import PhotoGallery from '../components/PhotoGallery';
 
+// Load damage report by UUID
 export default function result() {
 
     const {query} = useRouter();

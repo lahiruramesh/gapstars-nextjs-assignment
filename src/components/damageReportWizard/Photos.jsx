@@ -3,9 +3,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ImageList, { ImageListItem, TextField, Button } from '@mui/material';
 
-
+// Photos upload section in Wizard
 export default function Photos(props) {
-
 
   const [uploadFile, setUploadFile] = React.useState();
 

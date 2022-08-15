@@ -1,5 +1,6 @@
 import { writeFileSync } from "fs";
 
+// Write damage report to file
 export default async function submit(req, res) {
     if (req.method !== "POST") {
       return res.status(405);

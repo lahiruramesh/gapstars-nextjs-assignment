@@ -1,13 +1,11 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import styles from './Header.module.css';
 
-
+// Header with navbar
 export default function Header() {
     return(
-        // <AppBar>
         <Toolbar>
         <nav className={styles.nav}> 
             <Typography variant="h6" color="inherit" className={styles.navItem} noWrap>
@@ -18,6 +16,5 @@ export default function Header() {
             <a href='/overview' className={styles.navItem}>Overview</a>
         </nav>
         </Toolbar>
-        // </AppBar> 
     )
 }

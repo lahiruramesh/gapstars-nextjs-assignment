@@ -14,7 +14,9 @@ import Summary from './Summary';
 
 import { steps } from '../../config/global.constants';
 
+import styles from './Wizard.module.css';
 
+// Load Wizard Components
 function getStepContent(step, {damageReportForm, setDamageReportForm}) {
     switch(step) {
         case 0: 
@@ -30,6 +32,7 @@ function getStepContent(step, {damageReportForm, setDamageReportForm}) {
     }
 }
 
+// Form Wizard
 export default function FormWizard() {
 
     const [activeStep, setActiveStep] = React.useState(0);
@@ -38,8 +41,6 @@ export default function FormWizard() {
     const [reference, setReference] = React.useState(null);
 
     const submitData = () => {
-      console.log('This is submitted!!!');
-      console.log('damage report form', damageReportForm);
       const requestOptions = {
         method: 'POST',
         data: damageReportForm,
@@ -69,7 +70,7 @@ export default function FormWizard() {
         <Typography component="h1" variant="h4" align="center">
           Vehicle Damage Report
         </Typography>
-        <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
+        <Stepper className="wizard-steps" activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
