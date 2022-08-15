@@ -32,19 +32,26 @@ function getStepContent(step, {damageReportForm, setDamageReportForm}) {
 
 export default function FormWizard() {
 
-    const [activeStep, setActiveStep] = React.useState(1);
+    const [activeStep, setActiveStep] = React.useState(0);
     const [validationStatus, setValidationStatus] = React.useState(false);
-    const [damageReportForm, setDamageReportForm] = React.useState({});
+    const [damageReportForm, setDamageReportForm] = React.useState({'uploads': []});
+    const [reference, setReference] = React.useState(null);
 
     const submitData = () => {
-        if(activeStep == 4) {
-          fetch('/api/submit',
-          damageReportForm).then(res => json(res)).then(data => console.log(data));
-        }
+      console.log('This is submitted!!!');
+      console.log('damage report form', damageReportForm);
+      const requestOptions = {
+        method: 'POST',
+        data: damageReportForm,
+      }
+      fetch('/api/submit',requestOptions).then(data => setReference(data.uuid)).catch((err) => console.log(err));  
     }
 
     const handleNext = () => {
         setActiveStep(activeStep + 1);
+        if(activeStep == 3) {
+          submitData();
+        }
     }
 
     const handleBack = () => {
@@ -52,7 +59,9 @@ export default function FormWizard() {
     }
 
     const handleHome = () => {
-        setActiveStep(1);
+        setActiveStep(0);
+        setDamageReportForm({'uploads': []});
+        setReference(null);
     }
 
     return (
@@ -74,7 +83,7 @@ export default function FormWizard() {
                 Thank you for submission. 
               </Typography>
               <Typography variant="subtitle1">
-                Your reference number is #2001539.
+                Your reference number is # {reference}.
               </Typography>
               <Button
                   variant="contained"
@@ -99,7 +108,6 @@ export default function FormWizard() {
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}
                   disabled={validationStatus}
-                  onSubmit={submitData}
                 >
                   {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
                 </Button>

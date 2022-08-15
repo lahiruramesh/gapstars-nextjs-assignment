@@ -30,9 +30,10 @@ export default async function upload(req, res) {
         return resolve();
       }
 
-      const ext = path.extname(files.image.path);
+      console.log('image',files.image);
+      const ext = path.extname(files.image.filepath);
       const uuid = Math.random().toString(26).slice(2);
-      await renameSync(files.image.path, `./public/images/${uuid}${ext}`);
+      await renameSync(files.image.filepath, `./public/images/${uuid}${ext}`);
 
       res.status(201).json({
         uuid,

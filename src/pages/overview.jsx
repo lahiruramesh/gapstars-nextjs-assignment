@@ -17,8 +17,6 @@ export default function Overview() {
         setDamageRepors(data); 
         setLoading(false)
     });
-
-
   }, []);
 
   if (isLoading) return <p>Loading...</p>

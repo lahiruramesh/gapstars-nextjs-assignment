@@ -28,7 +28,8 @@ export default function Photos(props) {
     }
     fetch('/api/upload', requestOptions).then((response) => response.text())
     .then((result) => {
-      console.log(result);
+      let form = {...props.damageReportForm};
+      form['photos'] = [...form['photos'], JSON.parse(result)];
       props.setDamageReportForm(form);
     })
     .catch((error) => console.log("error", error));
